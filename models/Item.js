@@ -24,12 +24,12 @@ const ItemSchema = new Schema({
     required: true,
   },
   shipping: {
-    type: Boolean,
-    required: true,
+    type: String,
+    required: Boolean,
   },
   pickup: {
-    type: Boolean,
-    required: true,
+    type: String,
+    required: Boolean,
   },
   notes: {
     type: String,
