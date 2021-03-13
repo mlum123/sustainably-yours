@@ -73,10 +73,14 @@ class ItemModal extends Component {
             Add Item
           </Button>
         ) : (
-          <h4 className="mb-3 ml-4">Please log in to manage items</h4>
+          ""
         )}
 
-        <Modal isOpen={this.state.modal} toggle={this.toggle}>
+        <Modal
+          isOpen={this.state.modal}
+          toggle={this.toggle}
+          className="custom-modal"
+        >
           <ModalHeader toggle={this.toggle}>
             Put Clothing Item on Sale
           </ModalHeader>
@@ -171,7 +175,11 @@ class ItemModal extends Component {
                   onChange={this.onChange}
                 />
               </FormGroup>
-              <Button color="dark" style={{ marginTop: "2rem" }} block>
+              <Button
+                style={{ marginTop: "2rem" }}
+                block
+                className="custom-btn"
+              >
                 Add Item
               </Button>
             </Form>

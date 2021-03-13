@@ -59,7 +59,12 @@ class AppNavbar extends Component {
 
     return (
       <div>
-        <Navbar color="dark" dark expand="sm" className="mb-5">
+        <Navbar
+          dark
+          expand="sm"
+          className="mb-5"
+          style={{ background: "#490B3D" }}
+        >
           <Container>
             <NavbarBrand href="/">sustainably yours</NavbarBrand>
             <NavbarToggler onClick={this.toggle}></NavbarToggler>

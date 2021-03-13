@@ -93,7 +93,11 @@ class RegisterModal extends Component {
           Register
         </NavLink>
 
-        <Modal isOpen={this.state.modal} toggle={this.toggle}>
+        <Modal
+          isOpen={this.state.modal}
+          toggle={this.toggle}
+          className="custom-modal"
+        >
           <ModalHeader toggle={this.toggle}>Register</ModalHeader>
           <ModalBody>
             {this.state.msg ? (
@@ -210,7 +214,11 @@ class RegisterModal extends Component {
                   onChange={this.onChange}
                 />
               </FormGroup>
-              <Button color="dark" style={{ marginTop: "2rem" }} block>
+              <Button
+                style={{ marginTop: "2rem" }}
+                block
+                className="custom-btn"
+              >
                 Register
               </Button>
             </Form>

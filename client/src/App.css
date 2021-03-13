@@ -1,3 +1,43 @@
+.App {
+  font-family: "Poppins", "Raleway", "Josefin Sans", sans-serif;
+  background: #f0f0f0;
+  min-height: 100vh;
+}
+
+.custom-modal {
+  font-family: "Poppins", "Raleway", "Josefin Sans", sans-serif;
+  min-width: 300px;
+}
+
+.custom-btn {
+  background: #bd1e51 !important;
+  border: none !important;
+}
+
+.custom-btn:hover {
+  background: #bd1e51;
+  border: none;
+}
+
+.custom-btn:focus {
+  background: #bd1e51;
+  border: none;
+}
+
+.custom-btn:active {
+  background: #bd1e51;
+  border: none;
+}
+
+.highlight {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 80%,
+    rgba(189, 30, 81, 0.9) 20%
+  );
+  max-height: 23vh;
+}
+
 .remove-btn {
   margin-right: 0.5rem;
 }

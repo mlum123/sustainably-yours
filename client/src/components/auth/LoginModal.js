@@ -84,7 +84,11 @@ class LoginModal extends Component {
           Login
         </NavLink>
 
-        <Modal isOpen={this.state.modal} toggle={this.toggle}>
+        <Modal
+          isOpen={this.state.modal}
+          toggle={this.toggle}
+          className="custom-modal"
+        >
           <ModalHeader toggle={this.toggle}>Login</ModalHeader>
           <ModalBody>
             {this.state.msg ? (
@@ -111,7 +115,11 @@ class LoginModal extends Component {
                   onChange={this.onChange}
                 />
               </FormGroup>
-              <Button color="dark" style={{ marginTop: "2rem" }} block>
+              <Button
+                style={{ marginTop: "2rem" }}
+                block
+                className="custom-btn"
+              >
                 Login
               </Button>
             </Form>

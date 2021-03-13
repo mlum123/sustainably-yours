@@ -22,23 +22,22 @@ class ClothingList extends Component {
 
   render() {
     const { items } = this.props.item;
-    return (
+    return this.props.isAuthenticated ? (
       <Container>
         <ListGroup>
           <TransitionGroup className="clothing-list">
             {items.map(({ _id, name }) => (
               <CSSTransition key={_id} timeout={500} classNames="fade">
                 <ListGroupItem>
-                  {this.props.isAuthenticated ? (
-                    <Button
-                      className="remove-btn"
-                      color="danger"
-                      size="sm"
-                      onClick={this.onDeleteClick.bind(this, _id)}
-                    >
-                      &times;
-                    </Button>
-                  ) : null}
+                  <Button
+                    className="remove-btn"
+                    color="danger"
+                    size="sm"
+                    onClick={this.onDeleteClick.bind(this, _id)}
+                  >
+                    &times;
+                  </Button>
+
                   {name}
                 </ListGroupItem>
               </CSSTransition>
@@ -46,7 +45,7 @@ class ClothingList extends Component {
           </TransitionGroup>
         </ListGroup>
       </Container>
-    );
+    ) : null;
   }
 }
 
