@@ -17,6 +17,7 @@ class ItemModal extends Component {
   state = {
     modal: false,
     name: "",
+    type: "Dresses",
     price: "",
     condition: "Never Worn",
     origPrice: "",
@@ -45,6 +46,7 @@ class ItemModal extends Component {
 
     const newItem = {
       name: this.state.name,
+      type: this.state.type,
       price: this.state.price,
       condition: this.state.condition,
       origPrice: this.state.origPrice,
@@ -52,6 +54,12 @@ class ItemModal extends Component {
       shipping: this.state.shipping === "Yes",
       pickup: this.state.pickup === "Yes",
       notes: this.state.notes,
+      userId: this.props.auth.user.id,
+      userName: this.props.auth.user.name,
+      userEmail: this.props.auth.user.email,
+      userPhone: this.props.auth.user.phone,
+      userCity: this.props.auth.user.city,
+      userState: this.props.auth.user.state,
     };
 
     // Add item via addItem action
@@ -81,9 +89,7 @@ class ItemModal extends Component {
           toggle={this.toggle}
           className="custom-modal"
         >
-          <ModalHeader toggle={this.toggle}>
-            Put Clothing Item on Sale
-          </ModalHeader>
+          <ModalHeader toggle={this.toggle}>Add Item for Sale</ModalHeader>
           <ModalBody>
             <Form onSubmit={this.onSubmit}>
               <FormGroup>
@@ -92,9 +98,34 @@ class ItemModal extends Component {
                   type="text"
                   name="name"
                   id="item"
-                  placeholder="Add clothing item"
+                  placeholder="Item name"
                   onChange={this.onChange}
                 />
+              </FormGroup>
+              <FormGroup>
+                <Label for="type">Type</Label>
+                <Input
+                  type="select"
+                  name="type"
+                  id="type"
+                  onChange={this.onChange}
+                >
+                  <option>Dresses</option>
+                  <option>Tops</option>
+                  <option>Shirts and Blouses</option>
+                  <option>Pants</option>
+                  <option>Jeans</option>
+                  <option>Cardigans and Sweaters</option>
+                  <option>Hoodies and Sweatshirts</option>
+                  <option>Blazers</option>
+                  <option>Jackets and Coats</option>
+                  <option>Shoes</option>
+                  <option>Sportswear</option>
+                  <option>Jumpsuits and Rompers</option>
+                  <option>Skirts</option>
+                  <option>Shorts</option>
+                  <option>Accessories</option>
+                </Input>
               </FormGroup>
               <FormGroup>
                 <Label for="price">Price</Label>
@@ -102,7 +133,7 @@ class ItemModal extends Component {
                   type="text"
                   name="price"
                   id="price"
-                  placeholder="Enter selling price"
+                  placeholder="Your selling price"
                   onChange={this.onChange}
                 />
               </FormGroup>
@@ -127,7 +158,7 @@ class ItemModal extends Component {
                   type="text"
                   name="origPrice"
                   id="origPrice"
-                  placeholder="Enter original price"
+                  placeholder="Original price"
                   onChange={this.onChange}
                 />
               </FormGroup>
@@ -137,7 +168,7 @@ class ItemModal extends Component {
                   type="text"
                   name="brand"
                   id="brand"
-                  placeholder="Enter brand name"
+                  placeholder="Brand name"
                   onChange={this.onChange}
                 />
               </FormGroup>
@@ -193,6 +224,7 @@ class ItemModal extends Component {
 const mapStateToProps = (state) => ({
   item: state.item,
   isAuthenticated: state.auth.isAuthenticated,
+  auth: state.auth,
 });
 
 export default connect(mapStateToProps, { addItem })(ItemModal);

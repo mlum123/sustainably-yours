@@ -20,6 +20,7 @@ router.get("/", (req, res) => {
 router.post("/", auth, (req, res) => {
   const newItem = new Item({
     name: req.body.name,
+    type: req.body.type,
     price: req.body.price,
     condition: req.body.condition,
     origPrice: req.body.origPrice,
@@ -27,6 +28,12 @@ router.post("/", auth, (req, res) => {
     shipping: req.body.shipping,
     pickup: req.body.pickup,
     notes: req.body.notes,
+    userId: req.body.userId,
+    userName: req.body.userName,
+    userEmail: req.body.userEmail,
+    userPhone: req.body.userPhone,
+    userCity: req.body.userCity,
+    userState: req.body.userState,
   });
 
   newItem.save().then((item) => res.json(item));

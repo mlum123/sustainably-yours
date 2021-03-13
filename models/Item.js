@@ -7,6 +7,10 @@ const ItemSchema = new Schema({
     type: String,
     required: true,
   },
+  type: {
+    type: String,
+    required: true,
+  },
   price: {
     type: String,
     required: true,
@@ -32,6 +36,30 @@ const ItemSchema = new Schema({
     required: Boolean,
   },
   notes: {
+    type: String,
+    required: true,
+  },
+  userId: {
+    type: String,
+    required: true,
+  },
+  userName: {
+    type: String,
+    required: true,
+  },
+  userEmail: {
+    type: String,
+    required: true,
+  },
+  userPhone: {
+    type: String,
+    required: true,
+  },
+  userCity: {
+    type: String,
+    required: true,
+  },
+  userState: {
     type: String,
     required: true,
   },
