@@ -216,7 +216,11 @@ class ClothingList extends Component {
                 <br></br>
                 <em>Seller's Note: {item.notes}</em>
                 <br></br>
-                <em>Contact: {item.userEmail}</em>
+                <em>
+                  ({item.userPhone.substring(0, 3)}){" "}
+                  {item.userPhone.substring(3, 6)}-{item.userPhone.substring(6)}{" "}
+                  | {item.userEmail}
+                </em>
                 <br></br>
                 <em>
                   {item.userCity}, {item.userState}
