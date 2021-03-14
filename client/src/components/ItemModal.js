@@ -17,6 +17,7 @@ class ItemModal extends Component {
   state = {
     modal: false,
     name: "",
+    gender: "Women",
     type: "Dresses",
     price: "",
     condition: "Never Worn",
@@ -47,6 +48,7 @@ class ItemModal extends Component {
 
     const newItem = {
       name: this.state.name,
+      gender: this.state.gender,
       type: this.state.type,
       price: this.state.price,
       condition: this.state.condition,
@@ -75,12 +77,8 @@ class ItemModal extends Component {
     return (
       <div>
         {this.props.isAuthenticated ? (
-          <Button
-            color="dark"
-            style={{ marginBottom: "2rem" }}
-            onClick={this.toggle}
-          >
-            Add Item
+          <Button color="light" onClick={this.toggle} className="custom-btn-2">
+            add new item
           </Button>
         ) : (
           ""
@@ -105,6 +103,19 @@ class ItemModal extends Component {
                 />
               </FormGroup>
               <FormGroup>
+                <Label for="gender">Gender</Label>
+                <Input
+                  type="select"
+                  name="gender"
+                  id="gender"
+                  onChange={this.onChange}
+                >
+                  <option>Women</option>
+                  <option>Men</option>
+                  <option>Unisex</option>
+                </Input>
+              </FormGroup>
+              <FormGroup>
                 <Label for="type">Type</Label>
                 <Input
                   type="select"
@@ -114,7 +125,7 @@ class ItemModal extends Component {
                 >
                   <option>Dresses</option>
                   <option>Tops</option>
-                  <option>Shirts and Blouses</option>
+                  <option>Blouses</option>
                   <option>Pants</option>
                   <option>Jeans</option>
                   <option>Cardigans and Sweaters</option>

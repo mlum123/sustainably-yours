@@ -20,6 +20,7 @@ router.get("/", (req, res) => {
 router.post("/", auth, (req, res) => {
   const newItem = new Item({
     name: req.body.name,
+    gender: req.body.gender,
     type: req.body.type,
     price: req.body.price,
     condition: req.body.condition,

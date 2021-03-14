@@ -28,6 +28,26 @@
   border: none;
 }
 
+.custom-btn-2 {
+  background: #f1b814 !important;
+  border: none !important;
+}
+
+.custom-btn-2:hover {
+  background: #f1b814;
+  border: none;
+}
+
+.custom-btn-2:focus {
+  background: #f1b814;
+  border: none;
+}
+
+.custom-btn-2:active {
+  background: #f1b814;
+  border: none;
+}
+
 .highlight {
   background: linear-gradient(
     180deg,
@@ -63,6 +83,7 @@
 
 .card {
   min-width: 325px;
+  max-width: 350px;
   margin-right: 1rem;
   margin-top: 1rem;
 
@@ -78,4 +99,5 @@
 
 .card-img {
   height: 400px;
+  width: auto;
 }
