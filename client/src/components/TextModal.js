@@ -69,11 +69,11 @@ class TextModal extends React.Component {
           toggle={this.toggle}
           className="custom-modal"
         >
-          <ModalHeader toggle={this.toggle}>send a text</ModalHeader>
+          <ModalHeader toggle={this.toggle}>Contact Seller By Text</ModalHeader>
           <ModalBody>
             <Form>
               <FormGroup>
-                <Label for="phoneNum">phone number:</Label>
+                <Label for="phoneNum">Phone Number:</Label>
                 <Input
                   type="text"
                   name="phoneNum"
@@ -88,13 +88,13 @@ class TextModal extends React.Component {
                 />
               </FormGroup>
               <FormGroup>
-                <Label for="message">message:</Label>
+                <Label for="message">Message:</Label>
                 <Input
                   type="textarea"
                   name="message"
                   id="message"
                   value={text.textmessage}
-                  placeholder="type your message here!"
+                  placeholder="Your message here..."
                   onChange={(e) =>
                     this.setState({
                       text: { ...text, textmessage: e.target.value },
@@ -103,7 +103,7 @@ class TextModal extends React.Component {
                 />
               </FormGroup>
               <Button className="custom-btn" onClick={this.sendText}>
-                send text
+                Send Text
               </Button>
             </Form>{" "}
           </ModalBody>

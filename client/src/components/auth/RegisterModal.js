@@ -90,7 +90,7 @@ class RegisterModal extends Component {
     return (
       <div>
         <NavLink onClick={this.toggle} href="#">
-          Register
+          register
         </NavLink>
 
         <Modal

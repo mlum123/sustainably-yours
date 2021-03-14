@@ -19,8 +19,8 @@ class EmailModal extends React.Component {
   state = {
     modal: false,
     to: this.props.email,
-    subject: "subject",
-    message: "type your email here!",
+    subject: "Subject",
+    message: "Your message here...",
   };
 
   // toggle modal
@@ -55,21 +55,24 @@ class EmailModal extends React.Component {
           isOpen={this.state.modal}
           toggle={this.toggle}
         >
-          <ModalHeader toggle={this.toggle}>Contact Seller</ModalHeader>
+          <ModalHeader toggle={this.toggle}>
+            Contact Seller By Email
+          </ModalHeader>
           <ModalBody>
             <Form className="send-email-form">
               <FormGroup>
-                <Label for="to">to:</Label>
+                <Label for="to">To:</Label>
                 <Input
                   type="text"
                   name="to"
+                  value={this.state.to}
                   placeholder={this.state.to}
                   id="to"
                   onChange={this.handleChange}
                 ></Input>
               </FormGroup>
               <FormGroup>
-                <Label for="subject">subject:</Label>
+                <Label for="subject">Subject:</Label>
                 <Input
                   type="text"
                   name="subject"
@@ -79,7 +82,7 @@ class EmailModal extends React.Component {
                 ></Input>
               </FormGroup>
               <FormGroup>
-                <Label for="message">email:</Label>
+                <Label for="message">Email Message:</Label>
                 <Input
                   type="textarea"
                   name="message"
@@ -88,8 +91,8 @@ class EmailModal extends React.Component {
                   onChange={this.handleChange}
                 ></Input>
               </FormGroup>
-              <Button class="custom-btn" onClick={this.onSubmitForm}>
-                send
+              <Button className="custom-btn" onClick={this.onSubmitForm}>
+                Send
               </Button>
             </Form>
           </ModalBody>
