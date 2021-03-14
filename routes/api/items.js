@@ -34,6 +34,7 @@ router.post("/", auth, (req, res) => {
     userPhone: req.body.userPhone,
     userCity: req.body.userCity,
     userState: req.body.userState,
+    image: req.body.image,
   });
 
   newItem.save().then((item) => res.json(item));

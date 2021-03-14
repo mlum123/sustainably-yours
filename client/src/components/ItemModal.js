@@ -25,6 +25,7 @@ class ItemModal extends Component {
     shipping: false,
     pickup: false,
     notes: "",
+    image: "",
   };
 
   static propTypes = {
@@ -60,6 +61,7 @@ class ItemModal extends Component {
       userPhone: this.props.auth.user.phone,
       userCity: this.props.auth.user.city,
       userState: this.props.auth.user.state,
+      image: this.state.image,
     };
 
     // Add item via addItem action
@@ -203,6 +205,16 @@ class ItemModal extends Component {
                   name="notes"
                   id="notes"
                   placeholder="Add notes (ex: shipping fee, etc.)"
+                  onChange={this.onChange}
+                />
+              </FormGroup>
+              <FormGroup>
+                <Label for="image">Image</Label>
+                <Input
+                  type="text"
+                  name="image"
+                  id="image"
+                  placeholder="Image link"
                   onChange={this.onChange}
                 />
               </FormGroup>
