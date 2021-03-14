@@ -12,9 +12,11 @@ import {
   Col,
   Button,
 } from "reactstrap";
+import EmailModal from "./EmailModal";
 import { connect } from "react-redux";
 import { getItems, deleteItem } from "../actions/itemActions";
 import PropTypes from "prop-types";
+import Google from "../Google";
 
 class ClothingList extends Component {
   state = {
@@ -23,6 +25,7 @@ class ClothingList extends Component {
     type: "Type",
     price: "Price",
     condition: "Condition",
+    googleSignedIn: false,
   };
 
   static propTypes = {
@@ -33,6 +36,7 @@ class ClothingList extends Component {
 
   componentDidMount() {
     this.props.getItems();
+    Google.handleClientLoad();
   }
 
   onDeleteClick = (id) => {
@@ -53,7 +57,44 @@ class ClothingList extends Component {
     });
   };
 
+  // Google sign in button click event handler
+  onHandleGoogleAuthClick = () => {
+    Google.handleAuthClick();
+    this.setState({ googleSignedIn: Google.signedIn });
+  };
+
+  // Google sign out button click event handler
+  // reset state contacts, emails, events to be empty
+  onHandleGoogleSignoutClick = () => {
+    Google.handleSignoutClick();
+    this.setState({
+      googleSignedIn: Google.signedIn,
+    });
+  };
+
   render() {
+    // authButton and signOutButton use Google module to handle sign in and sign out clicks
+    // only display authButton (sign in) if user isn't signed in yet
+    // only display signOutButton if user is signed in with Google
+    let googleAuthButton = (
+      <Button
+        color="light"
+        className="custom-btn-2"
+        onClick={this.onHandleGoogleAuthClick}
+      >
+        sign in with google to contact sellers
+      </Button>
+    );
+    let googleSignOutButton = (
+      <Button
+        color="light"
+        className="custom-btn-2"
+        onClick={this.onHandleGoogleSignoutClick}
+      >
+        sign out
+      </Button>
+    );
+
     let { items } = this.props.item;
 
     // only get items that don't belong to current user
@@ -190,6 +231,13 @@ class ClothingList extends Component {
             </Col>
           </Row>
         </Form>
+        <br></br>
+        <Row>
+          <Col>
+            {!this.state.googleSignedIn ? googleAuthButton : null}
+            {this.state.googleSignedIn ? googleSignOutButton : null}
+          </Col>
+        </Row>
         <CardGroup className="card-group">
           {items.map((item) => (
             <Card key={item._id} className="card">
@@ -217,9 +265,13 @@ class ClothingList extends Component {
                 <em>Seller's Note: {item.notes}</em>
                 <br></br>
                 <em>
-                  ({item.userPhone.substring(0, 3)}){" "}
+                  <i class="fas fa-phone-alt"></i> (
+                  {item.userPhone.substring(0, 3)}){" "}
                   {item.userPhone.substring(3, 6)}-{item.userPhone.substring(6)}{" "}
-                  | {item.userEmail}
+                </em>
+                <br></br>
+                <em>
+                  <EmailModal email={item.userEmail} /> {item.userEmail}
                 </em>
                 <br></br>
                 <em>
