@@ -38,23 +38,44 @@
 }
 
 .remove-btn {
-  margin-right: 0.5rem;
+  background: #bd1e51;
+  border: none;
 }
 
-.fade-enter {
-  opacity: 0.01;
+.remove-btn:hover {
+  background: #bd1e51;
+  border: none;
 }
 
-.fade-enter-active {
-  opacity: 1;
-  transition: opacity 1000ms ease-in;
+.remove-btn:focus {
+  background: #bd1e51;
+  border: none;
 }
 
-.fade-exit {
-  opacity: 1;
+.remove-btn:active {
+  background: #bd1e51;
+  border: none;
 }
 
-.fade-exit-active {
-  opacity: 0.01;
-  transition: opacity 1000ms ease-in;
+.card-group {
+  padding-bottom: 2rem;
+}
+
+.card {
+  min-width: 325px;
+  margin-right: 1rem;
+  margin-top: 1rem;
+
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card-img {
+  height: 400px;
 }

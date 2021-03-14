@@ -22,8 +22,8 @@ class ItemModal extends Component {
     condition: "Never Worn",
     origPrice: "",
     brand: "",
-    shipping: false,
-    pickup: false,
+    shipping: "Yes",
+    pickup: "Yes",
     notes: "",
     image: "",
   };

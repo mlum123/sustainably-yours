@@ -1,6 +1,13 @@
 import React, { Component } from "react";
-import { Container, ListGroup, ListGroupItem, Button } from "reactstrap";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
+import {
+  Container,
+  CardGroup,
+  Card,
+  CardBody,
+  CardImg,
+  Badge,
+  Button,
+} from "reactstrap";
 import { connect } from "react-redux";
 import { getItems, deleteItem } from "../actions/itemActions";
 import PropTypes from "prop-types";
@@ -24,26 +31,53 @@ class ClothingList extends Component {
     const { items } = this.props.item;
     return this.props.isAuthenticated ? (
       <Container>
-        <ListGroup>
-          <TransitionGroup className="clothing-list">
-            {items.map(({ _id, name }) => (
-              <CSSTransition key={_id} timeout={500} classNames="fade">
-                <ListGroupItem>
+        <CardGroup className="card-group">
+          {items.map((item) => (
+            <Card key={item._id} className="card">
+              <CardImg src={item.image} className="card-img"></CardImg>
+              <CardBody>
+                <strong>
+                  {item.brand} {item.name} | {item.price}
+                </strong>
+                <br></br>
+                <Badge color="info">{item.condition}</Badge>{" "}
+                {item.shipping === true ? (
+                  <Badge color="warning">Shipping</Badge>
+                ) : (
+                  ""
+                )}{" "}
+                {item.shipping === true ? (
+                  <Badge color="warning">Pick Up</Badge>
+                ) : (
+                  ""
+                )}{" "}
+                <br></br>
+                <br></br>
+                <em>Original Price: {item.origPrice}</em>
+                <br></br>
+                <em>Seller's Note: {item.notes}</em>
+                <br></br>
+                <em>Contact: {item.userEmail}</em>
+                <br></br>
+                <em>
+                  {item.userCity}, {item.userState}
+                </em>
+                <br></br>
+                {this.props.auth.user.id === item.userId ? (
                   <Button
                     className="remove-btn"
-                    color="danger"
                     size="sm"
-                    onClick={this.onDeleteClick.bind(this, _id)}
+                    onClick={this.onDeleteClick.bind(this, item._id)}
                   >
-                    &times;
+                    remove
                   </Button>
-
-                  {name}
-                </ListGroupItem>
-              </CSSTransition>
-            ))}
-          </TransitionGroup>
-        </ListGroup>
+                ) : (
+                  ""
+                )}
+              </CardBody>
+            </Card>
+          ))}
+        </CardGroup>
       </Container>
     ) : null;
   }
@@ -52,6 +86,7 @@ class ClothingList extends Component {
 const mapStateToProps = (state) => ({
   item: state.item,
   isAuthenticated: state.auth.isAuthenticated,
+  auth: state.auth,
 });
 
 export default connect(mapStateToProps, { getItems, deleteItem })(ClothingList);
