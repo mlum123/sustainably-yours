@@ -82,6 +82,7 @@ class ClothingList extends Component {
         color="light"
         className="custom-btn-2"
         onClick={this.onHandleGoogleAuthClick}
+        style={{ width: "344px" }}
       >
         sign in with google to contact sellers
       </Button>
