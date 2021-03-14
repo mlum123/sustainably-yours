@@ -14,7 +14,7 @@ What's more is that fast fashion — low-cost, rapidly produced clothing — isn
 
 That's where Sustainably Yours comes in. Sustainably Yours is a full-stack web app built using MongoDB, Express, React, and Node.js, and it's a way to fight back at fast fashion.
 
-Sustainably Yours handles user authentication with JSON Web Tokens, adding new users to a database in MongoDB Atlas when they sign up on the site. Once users sign up, they can put clothing they no longer wear on sale, so it can find a second owner. Users can also browse the clothing that other sellers have posted. With Sustainably Yours, users can avoid wastefully throwing away clothing, or shopping from fast fashion retailers more than necessary.
+Sustainably Yours handles user authentication with JSON Web Tokens, adding new users to a MongoDB Atlas database when they sign up. Once users sign up, they can put clothing they no longer wear on sale, so it can find a second owner. Users can also browse the clothing that other sellers have posted. With Sustainably Yours, users can avoid wastefully throwing away clothing, or shopping from fast fashion retailers more than necessary.
 
 Furthermore, Sustainably Yours is integrated with the Twilio SMS API and the Gmail API through OAuth 2.0 authentication, so to contact a seller, a user can just log in to Sustainably Yours with Google and send an email or text straight from the Sustainably Yours web app.
 
