@@ -12,6 +12,7 @@ import {
   Col,
   Button,
 } from "reactstrap";
+import TextModal from "./TextModal";
 import EmailModal from "./EmailModal";
 import { connect } from "react-redux";
 import { getItems, deleteItem } from "../actions/itemActions";
@@ -265,7 +266,7 @@ class ClothingList extends Component {
                 <em>Seller's Note: {item.notes}</em>
                 <br></br>
                 <em>
-                  <i class="fas fa-phone-alt"></i> (
+                  <TextModal phone={item.userPhone} /> (
                   {item.userPhone.substring(0, 3)}){" "}
                   {item.userPhone.substring(3, 6)}-{item.userPhone.substring(6)}{" "}
                 </em>

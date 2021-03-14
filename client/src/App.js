@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import AppNavbar from "./components/AppNavbar";
 import ClothingList from "./components/ClothingList";
 import UserClothingList from "./components/UserClothingList";
-import ItemModal from "./components/ItemModal";
 import { Container } from "reactstrap";
 import HomeCarousel from "./components/HomeCarousel";
 
