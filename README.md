@@ -1,6 +1,6 @@
 # Sustainably Yours
 
-#### HackMerced 2021
+#### HackMerced 2021: Social Good 1st Place, Best Design
 
 _Check out this project on Devpost: https://devpost.com/software/sustainably-yours_
 
