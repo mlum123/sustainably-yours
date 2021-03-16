@@ -1,3 +1,5 @@
+// LoginModal component with Modal and NavLink for toggling modal open
+
 import React, { Component } from "react";
 import {
   Button,

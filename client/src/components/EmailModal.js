@@ -1,6 +1,6 @@
-// Email Modal component with the modal itself, and button for opening modal
-// Shows full email with sender name + email address, subject, message
-// Shows form to reply to email, uses Google module to send email
+// EmailModal component with the modal itself, and button for opening modal
+// shows form to email sender, uses Google module with Gmail API to send email
+// it's included in ClothingList component
 
 import React from "react";
 import {

@@ -1,6 +1,7 @@
-// Text component with button to open modal + modal with form
+// TextModal component with button to open modal + modal with form
 // to send text to phone num via Twilio SMS API
 // uses Express backend API in server.js to communicate with Twilio SMS API to send text
+// it's included in ClothingList component
 
 import React from "react";
 import {

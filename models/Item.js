@@ -1,3 +1,5 @@
+// Item model for how clothing items should be structured
+
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 

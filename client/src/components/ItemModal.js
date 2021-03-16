@@ -1,3 +1,6 @@
+// ItemModal component has modal and button to toggle modal open to add a new item for sale
+// it's included in the UserClothingList component
+
 import React, { Component } from "react";
 import {
   Button,

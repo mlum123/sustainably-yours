@@ -1,3 +1,6 @@
+// AppNavbar component is navigation bar at top of webpage
+// shows different links depending on if user is logged in or not
+
 import React, { Component, Fragment } from "react";
 import {
   Collapse,

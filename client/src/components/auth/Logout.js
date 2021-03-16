@@ -1,3 +1,5 @@
+// Logout component with NavLink for logging out
+
 import React, { Component, Fragment } from "react";
 import { NavLink } from "reactstrap";
 import { connect } from "react-redux";

@@ -1,5 +1,6 @@
 // Google module using OAuth2.0 authentication
-// send emails using Gmail API,
+// send emails using Gmail API
+
 const API_KEY = process.env.REACT_APP_GOOGLE_API_KEY;
 const CLIENT_ID = process.env.REACT_APP_GOOGLE_CLIENT_ID;
 const DISCOVERY_DOCS = [
@@ -86,6 +87,7 @@ const Google = {
   },
 
   // TODO: this doesn't work - get "from" email from logged-in user's profile
+  // actually somehow it does send it from the correct person when you log in as that person?
   getUserEmail() {
     return gapi.client.gmail.users
       .getProfile({
@@ -100,6 +102,7 @@ const Google = {
   // Use Gmail API to send an email
   sendEmail(to, subject, message) {
     // TODO: get "from" email from logged-in user's profile
+    // actually somehow it does send it from the correct person (instead of mlumtest) when you log in as that person?
     let from = "mlumtest@gmail.com";
 
     let raw = Google.makeBody(from, to, subject, message);

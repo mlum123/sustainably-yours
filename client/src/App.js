@@ -1,3 +1,6 @@
+// main App component for Sustainably Yours
+// to use Redux in components to get stuff from state, wrap everything in Provider
+
 import React, { Component } from "react";
 import AppNavbar from "./components/AppNavbar";
 import ClothingList from "./components/ClothingList";

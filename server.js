@@ -1,3 +1,6 @@
+// Set up backend server conected to MongoDB Atlas database (with items and users)
+// and Twilio SMS API (to send texts to sellers)
+
 const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");

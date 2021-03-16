@@ -1,3 +1,6 @@
+// HomeCarousel component displays carousel of 3 images with text on home page
+// shown if user is not logged in
+
 import React, { Component } from "react";
 import {
   Carousel,

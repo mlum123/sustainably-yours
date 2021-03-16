@@ -1,3 +1,11 @@
+// ClothingList component displays all items other users have put on sale
+// shown if user is logged in
+// includes search bar to filter items by name
+// includes filters of gender, type, price, and condition
+// includes phone icon to toggle modal open to text seller using Twilio SMS API
+// includes button to log in with Google using OAuth 2.0
+// includes mail icon to toggle modal open to email seller using Gmail API
+
 import React, { Component } from "react";
 import {
   Container,

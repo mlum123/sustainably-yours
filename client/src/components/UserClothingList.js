@@ -1,3 +1,8 @@
+// UserClothingList component displays user's closet with items user has put on sale
+// shown if user is logged in
+// includes remove item button to delete item from user's closet / Sustainably Yours
+// includes ItemModal component with button and modal to add new item for sale
+
 import React, { Component } from "react";
 import {
   Container,

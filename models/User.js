@@ -1,3 +1,5 @@
+// User model for how users should be structured
+
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 

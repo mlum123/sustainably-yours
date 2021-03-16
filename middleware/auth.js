@@ -1,3 +1,6 @@
+// auth middleware used in all private endpoints (GET api/auth/user, POST api/items, DELETE api/items/:id)
+// checks for token to check that user is logged in
+
 const config = require("config");
 const jwt = require("jsonwebtoken");
 
